@@ -14,7 +14,7 @@ CREATE TABLE role (
   role_salary DECIMAL,
   role_dept_id INT,
   FOREIGN KEY (role_dept_id) REFERENCES department(id) ON DELETE SET NULL
-  -- another foreign key here? --
+  
 );
 
 CREATE TABLE employee (
@@ -24,5 +24,5 @@ CREATE TABLE employee (
   employee_role_id INT,
   manager_id INT,
   FOREIGN KEY (employee_role_id) REFERENCES role(id) ON DELETE SET NULL,
-
-)
+  -- another foreign key here? --
+);
