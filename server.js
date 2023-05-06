@@ -1,6 +1,6 @@
 const mysql = require("mysql2");
 require("dotenv").config();
-const cTable = require("console.table");
+const inquirer = require("inquirer");
 //Connect to the database with mysql2; this variable is the request and database access key for all queries//
 const db = mysql.createConnection(
   {
@@ -12,14 +12,24 @@ const db = mysql.createConnection(
   console.log("Success connecting to records_db.")
 );
 
-console.table([
-
-]);
-//prepared statements here//
+//this will be my initial list created to select a view all option; initially run when index.js fires...wait can i simply put this in server.js?
+//
 db.query()
 
+const databaseContents = [
+  {
+    type: "list",
+    message: "Please select one of the following options:",
+    name: "contents",
+    choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update an Employee Role"],
+  }
+]
 
+inquirer.prompt(databaseContents).then((response) => {
+  
+})
 
+//switch statement
 
 
 module.exports = db
