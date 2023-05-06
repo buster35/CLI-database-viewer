@@ -14,7 +14,6 @@ const db = mysql.createConnection(
 
 //this will be my initial list created to select a view all option; initially run when index.js fires...wait can i simply put this in server.js?
 //
-db.query()
 
 const databaseContents = [
   {
@@ -26,11 +25,35 @@ const databaseContents = [
 ]
 
 inquirer.prompt(databaseContents).then((response) => {
-  
+  console.log(response.contents)
+  responseString = `"${response.contents}"`
+  console.log(responseString)
+  switch (responseString) {
+    case responseString = "View All Departments":
+      console.log("Success")
+      viewAllDepartments()
+      break;
+    case responseString:
+      viewAllRoles()
+      break;
+    case `"${response.contents}"`:
+      viewAllEmployees()
+    case `"${response.contents}"`:
+      addADepartment()
+      break;
+    case `"${response.contents}"`:
+      addARole()
+      break;
+    case `"${response.contents}"`:
+      addAnEmployee()
+      break;
+    case `"${response.contents}"`:
+      updateEmployeeRole()
+      break;
+    default:
+      return
+  }
 })
-
-//switch statement
-
 
 module.exports = db
 
