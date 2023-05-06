@@ -1,19 +1,20 @@
-const db = require("db")
-const mysql = require("mysql2")
-const inquirer = require("inquirer")
-const cTable = require("console.table");
+// const db = require("db")
+// const mysql = require("mysql2")
+// const inquirer = require("inquirer")
+// const cTable = require("console.table");
 
 
 
 
 
-function viewAllDepartments(_____) {
+function viewAllDepartments() {
+  console.log("Hello world")
+};
+
+function addADepartment() {
 
 };
 
-function addADepartment(____) {
-
-};
 
 
 
@@ -21,8 +22,7 @@ function addADepartment(____) {
 
 
 
-
-
+module.exports = { viewAllDepartments, addADepartment }
 
 
 

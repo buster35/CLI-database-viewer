@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 require("dotenv").config();
 const inquirer = require("inquirer");
+const { viewAllDepartments, addADepartment } = require("./prompts/departments")
 //Connect to the database with mysql2; this variable is the request and database access key for all queries//
 const db = mysql.createConnection(
   {
@@ -20,34 +21,34 @@ const databaseContents = [
     type: "list",
     message: "Please select one of the following options:",
     name: "contents",
-    choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update an Employee Role"],
+    choices: [new inquirer.Separator(), "View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update an Employee Role"],
   }
 ]
 
 inquirer.prompt(databaseContents).then((response) => {
-  console.log(response.contents)
-  responseString = `"${response.contents}"`
-  console.log(responseString)
-  switch (responseString) {
-    case responseString = "View All Departments":
-      console.log("Success")
+
+  let choice = response.contents
+  
+  switch (choice) {
+    case choice = 'View All Departments':
+      console.log("Success") //working
       viewAllDepartments()
       break;
-    case responseString:
+    case choice = 'View All Roles':
       viewAllRoles()
       break;
-    case `"${response.contents}"`:
+    case choice = 'View All Employees':
       viewAllEmployees()
-    case `"${response.contents}"`:
+    case choice = 'Add a Department':
       addADepartment()
       break;
-    case `"${response.contents}"`:
+    case choice = 'Add a Role':
       addARole()
       break;
-    case `"${response.contents}"`:
+    case choice = 'Add an Employee':
       addAnEmployee()
       break;
-    case `"${response.contents}"`:
+    case choice = 'Update an Employee Record':
       updateEmployeeRole()
       break;
     default:
