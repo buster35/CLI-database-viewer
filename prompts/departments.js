@@ -15,9 +15,7 @@ const db = mysql.createConnection(
 );
 
 function viewAllDepartments() {
-  
   db.query("SELECT * FROM department", function(err, results, fields) {
-     //returns id and dept_name as an array of objects
     console.table("Departments", results)
   })
 };

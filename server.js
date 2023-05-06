@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const { viewAllDepartments, addADepartment } =
   require("./prompts/departments")
 const { viewAllRoles, addARole } = require("./prompts/roles")
+const { viewAllEmployees, addAnEmployee, updateEmployeeRole } = require("./prompts/employees")
 
   //this will be my initial list created to select a view all option; initially run when index.js fires...
 const databaseContents = [
