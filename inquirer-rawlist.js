@@ -1,11 +1,12 @@
 //server.js example
 //for the homework, write a lot of functions
-const mysql = require("mysql2")
+const mysql = require("mysql2/promise")
 const inquirer = require("inquirer")
 
 async function getEmployeesByDept(){
   //query for all the departments -> mysql2 package
-  const departments = await mysql.query("SELECT * FROM departments")
+  const departments = await mysql.query("SELECT * FROM departments");
+
   inquirer.prompt([
     {
       type: "rawList", //we're not going to provide a ready-made list, we're going to provide a function to populate a list//
