@@ -7,22 +7,23 @@ CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   dept_name VARCHAR(30) NOT NULL
 );
+-- working --
 
-CREATE TABLE role (
-  id INT,
+CREATE TABLE roles (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   role_title VARCHAR(30) NOT NULL,
   role_salary DECIMAL,
   role_dept_id INT,
   FOREIGN KEY (role_dept_id) REFERENCES department(id) ON DELETE SET NULL
-  
 );
 
 CREATE TABLE employee (
-  id INT,
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   employee_role_id INT,
   manager_id INT,
-  FOREIGN KEY (employee_role_id) REFERENCES role(id) ON DELETE SET NULL,
-  -- another foreign key here? --
+  FOREIGN KEY (employee_role_id) REFERENCES roles(id) ON DELETE SET NULL,
+  FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );
+
