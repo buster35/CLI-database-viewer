@@ -2,6 +2,7 @@ require("dotenv").config();
 const inquirer = require("inquirer");
 const { viewAllDepartments, addADepartment } =
   require("./prompts/departments")
+const { viewAllRoles, addARole } = require("./prompts/roles")
 
   //this will be my initial list created to select a view all option; initially run when index.js fires...
 const databaseContents = [

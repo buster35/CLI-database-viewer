@@ -16,9 +16,8 @@ const db = mysql.createConnection(
 
 function viewAllDepartments() {
   
-  const departments = db.query("SELECT * FROM department", function(err, results, fields) {
-    console.log(results) //working! returns id and dept_name as an array of objects
-    console.error(err)
+  db.query("SELECT * FROM department", function(err, results, fields) {
+     //returns id and dept_name as an array of objects
     console.table("Departments", results)
   })
 };
