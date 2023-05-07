@@ -33,7 +33,6 @@ function addADepartment() {
   ];
   //working
   inquirer.prompt(addDepartment).then((response) => {
-    let deptName = response.newDepartment
     db.query(
       `INSERT INTO department (dept_name) VALUES ("${response.newDepartment}")`
     );
