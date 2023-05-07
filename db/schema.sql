@@ -1,6 +1,9 @@
 DROP DATABASE IF EXISTS records_db;
 CREATE DATABASE records_db;
 
+DROP DATABASE IF EXISTS records_db;
+CREATE DATABASE records_db;
+
 USE records_db;
 
 CREATE TABLE department (
@@ -23,6 +26,7 @@ CREATE TABLE employee (
   employee_role_id INT,
   manager_id INT,
   FOREIGN KEY (employee_role_id) REFERENCES roles(id) ON DELETE SET NULL,
-  FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );
+
+
 

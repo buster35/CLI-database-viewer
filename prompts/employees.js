@@ -11,11 +11,13 @@ const db = mysql.createConnection(
   },
   console.log("Success connecting to records_db.")
 );
-// WHEN I choose to view all employees
-// THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
 
+// managers that the employees report to
+
+
+//just need to render a result-set
 function viewAllEmployees() {
-  db.query("SELECT * FROM employees", function(err, results, fields) {
+  db.query("SELECT employee.first_name, employee.last_name, department.dept_name, roles.role_title, roles.role_salary, employee.manager_id FROM ((employee INNER JOIN roles ON employee_role_id = roles.id) INNER JOIN department ON roles.role_dept_id = department.id);", function(err, results, fields) {
     console.table("Employees", results)
   })
 };

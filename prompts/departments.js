@@ -15,8 +15,8 @@ const db = mysql.createConnection(
 );
 
 function viewAllDepartments() {
-  db.query("SELECT * FROM department", function(err, results, fields) {
-    console.table("Departments", results)
+  db.query("SELECT department.dept_name AS Department FROM department", function(err, results, fields) {
+    console.table(results)
   })
 };
 
