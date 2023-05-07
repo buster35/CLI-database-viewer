@@ -1,6 +1,6 @@
 //const db = require("../server") //working
-const mysql = require("mysql2")
-
+const mysql = require("mysql2");
+const inquirer = require("inquirer");
 const cTable = require("console.table");
 
 //Connect to the database with mysql2; this variable is the request and database access key for all queries//
@@ -15,29 +15,29 @@ const db = mysql.createConnection(
 );
 
 function viewAllDepartments() {
-  db.query("SELECT department.dept_name AS Department FROM department", function(err, results, fields) {
-    console.table(results)
-  })
-};
+  db.query(
+    "SELECT department.dept_name AS Department FROM department",
+    function (err, results, fields) {
+      console.table(results);
+    }
+  );
+}
 
 function addADepartment() {
-
-};
-
-
-
-
-
-
-
+  const addDepartment = [
+    {
+      type: "input",
+      message: "What is the name of the department to add?",
+      name: "newDepartment",
+    },
+  ];
+  //working
+  inquirer.prompt(addDepartment).then((response) => {
+    let deptName = response.newDepartment
+    db.query(
+      `INSERT INTO department (dept_name) VALUES ("${response.newDepartment}")`
+    );
+    viewAllDepartments()
+    })};
 
 module.exports = { viewAllDepartments, addADepartment }
-
-
-
-
-
-
-
-
-

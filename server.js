@@ -23,31 +23,32 @@ const databaseContents = [
   },
 ];
 
-inquirer.prompt(databaseContents).then((response) => {
-  let choice = response.contents;
+  inquirer.prompt(databaseContents).then((response) => {
+    let choice = response.contents;
 
-  switch (choice) {
-    case (choice = "View All Departments"): //working
-      viewAllDepartments();
-      break;
-    case (choice = "View All Roles"):
-      viewAllRoles();
-      break;
-    case (choice = "View All Employees"):
-      viewAllEmployees();
-    case (choice = "Add a Department"):
-      addADepartment();
-      break;
-    case (choice = "Add a Role"):
-      addARole();
-      break;
-    case (choice = "Add an Employee"):
-      addAnEmployee();
-      break;
-    case (choice = "Update an Employee Record"):
-      updateEmployeeRole();
-      break;
-    default:
-      return;
-  }
+    switch (choice) {
+      case (choice = "View All Departments"): //working
+        viewAllDepartments();
+        break;
+      case (choice = "View All Roles"):
+        viewAllRoles();
+        break;
+      case (choice = "View All Employees"):
+        viewAllEmployees();
+      case (choice = "Add a Department"):
+        addADepartment();
+        break;
+      case (choice = "Add a Role"):
+        addARole();
+        break;
+      case (choice = "Add an Employee"):
+        addAnEmployee();
+        break;
+      case (choice = "Update an Employee Record"):
+        updateEmployeeRole();
+        break;
+      default:
+        return;
+    }
 });
+
