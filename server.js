@@ -44,7 +44,7 @@ const databaseContents = [
       case (choice = "Add an Employee"):
         addAnEmployee();
         break;
-      case (choice = "Update an Employee Record"):
+      case (choice = "Update an Employee Role"):
         updateEmployeeRole();
         break;
       default:

@@ -1,4 +1,3 @@
-//const db = require("../server") //working
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const cTable = require("console.table");
@@ -31,7 +30,7 @@ function addADepartment() {
       name: "newDepartment",
     },
   ];
-  //working
+  
   inquirer.prompt(addDepartment).then((response) => {
     db.query(
       `INSERT INTO department (dept_name) VALUES ("${response.newDepartment}")`
