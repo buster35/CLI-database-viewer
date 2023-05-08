@@ -21,7 +21,7 @@ To initiate the database the user must close all open terminals and open a new t
 
 Walkthrough Video Link: https://drive.google.com/file/d/1PWjVe4FV3KpN-CkQB3RvNf-4c-dqJPTh/view
 
-![Inquirer Prompts](img-assets\mysql-table-outputs.png)
+![Inquirer Prompts](img-assets/mysql-table-outputs.png)
 
 ## Contributions
 No outside collaborators were involved on this project.
