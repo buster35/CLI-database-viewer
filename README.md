@@ -14,11 +14,15 @@ In building this project I learned more about database queries using MySQL, data
 ### [Questions](#questions)
 ### [License](#license)
 ## Installation
-To install this app the user will need to download the necessary dependencies using Node package manager (npm i _______): Inquirer, mysql2, dotenv, console.table. After installation, please make sure the Inquirer downloads as version 8.2.4 with the following command: npm i Inquirer@8.2.4. The user also must have the MySQL database suite downloaded including MySQL Workbench: https://www.mysql.com/.
+To install this app the user will need to download the necessary dependencies using Node package manager (npm install) Inquirer, mysql2, dotenv, console.table. After installation, please make sure the Inquirer downloads as version 8.2.4 with the following command: npm i Inquirer@8.2.4. The user also must have the MySQL database suite downloaded including MySQL Workbench: https://www.mysql.com/.
 ## Usage
 To initiate the database the user must close all open terminals and open a new terminal in the root of the application. From here, when all dependencies have been downloaded the user may initiate with the command: node server.js. The user will be presented with an Inquirer-based set of options to navigate the database. Upon completing the selection process the console.table package will render a user-friendly table with the desired data in the command line. The user may repeat this process by typing "Control + c", then the command "node server.js".
 ## Screenshots
+
+Walkthrough Video Link: https://drive.google.com/file/d/1PWjVe4FV3KpN-CkQB3RvNf-4c-dqJPTh/view
+
 ![Inquirer Prompts](img-assets\mysql-table-outputs.png)
+
 ## Contributions
 No outside collaborators were involved on this project.
 
